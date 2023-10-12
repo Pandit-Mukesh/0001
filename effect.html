@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>effect animation</title>
+	<style type="text/css">
+		*{
+			--clr-neutral-900:rgb(20 ,19, 19, .9);
+			--clr-neutral-100:hsl(0 ,0% ,100%);
+			-clr-accent-400:hsl(142 ,90%, 61%);
+		}
+		*{
+			padding: 0px;
+			margin: 0px;
+			box-sizing: border-box;
+		}
+		body{
+			display: grid;
+			min-height: 100vh;
+			place-items: center;
+			line-height: 1.6;
+			background: var(--clr-neutral-900);
+			font-family: sans-serif;
+		}
+		.image{
+			color: var(--clr-neutral-100);
+			background-image: url(images/effect.jpeg);
+			background-size: cover;
+			max-width: 35ch;
+			padding: 14rem 0 0;
+			border-radius: 1rem;
+			overflow: hidden;
+			transition: transform .8s ease;
+
+		}
+		.image:hover{
+			transform: scale(1.05);
+		}
+		.image-content{
+			--padding:2rem;
+			padding: var(--padding);
+			background:linear-gradient(hsl(0 0% 0%/0),hsl(0 0% 0%/.3) 10%,hsl(0 0% 0%/.6),hsl(0 0% 0%/1)) ;
+			transform: translateY(85%);
+			transition: transform .5s linear;
+		}
+		.image:hover .image-content{
+			transform:translateY(0%);
+		}
+		.image-title{
+			position: relative;
+            width:max-content;
+            //background-color: yellow;
+            //opacity: 0;
+            
+		}
+		.image-title::after{
+			content: "";
+			position: absolute;
+			height: 4px;
+			width: 10%;
+			left: -35px;
+			bottom: -2px;
+			opacity: 1;
+			background-color:yellow;
+			transform-origin:left ;
+            transform: scaleX(0);
+            transition: transform .8s linear;
+		}
+		.image .image-title:hover::after{
+			transform: scaleX(13);
+			opacity: 1;
+			background-color:green;
+		}
+		.image-body{
+			color: rgb(255, 255,255, .85);
+		}
+		.button{
+			cursor: pointer;
+			display: inline-block;
+			text-decoration: none;
+			color: var(--clr-neutral-900);
+			background:linear-gradient(to right, green, red);
+			padding: .5rem 1.25rem;
+			border-radius: .25rem;
+		}
+		.button:hover{
+			background: var(--clr-neutral-100);
+		}
+	</style>
+</head>
+<body>
+ <div class="image">
+ 	<img src="">
+ 	<div class="image-content">
+ 	<h2 class="image-title">Search something</h2>
+ 		<p class="image-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+ 		tempor incididunt ut labore et dolore magna aliqua.</p>
+ 		<a href="#"class="button">learn more</a>
+
+ 		</div>
+ 	</div>
+</body>
+</html>
